@@ -59,6 +59,8 @@ jobs:
             A=$(curl -sS --max-time 25 http://govorim-pravilno.ru/ | grep -o '/assets/[^"]*\.js' | head -1)
             echo "asset=$A"
             curl -sS -o /dev/null -w 'code=%{http_code} size=%{size_download}\n' --max-time 25 "http://govorim-pravilno.ru$A"
+            echo "=== HTTPS apex cert ==="
+            curl -sS -o /dev/null -w 'code=%{http_code}\n' --max-time 25 https://govorim-pravilno.ru/ 2>&1 | head -3
             echo "=== PAGES API ==="
             curl -sS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
               https://api.github.com/repos/${{ github.repository }}/pages
