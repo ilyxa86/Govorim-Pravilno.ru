@@ -17,6 +17,7 @@ jobs:
 
       - name: Collect DNS facts
         run: |
+          set +e
           {
             echo "=== NS (8.8.8.8) ==="
             dig @8.8.8.8 +short NS govorim-pravilno.ru
