@@ -35,17 +35,18 @@ jobs:
             curl -sS -I --max-time 20 http://govorim-pravilno.ru/ 2>&1 | head -20
             echo "=== HTTPS pages url ==="
             curl -sS -o /dev/null -w 'code=%{http_code}\n' --max-time 20 https://ilyxa86.github.io/Govorim-Pravilno.ru/ 2>&1
-            echo "=== HTTPS apex headers ==="
-            curl -sS -I --max-time 25 https://govorim-pravilno.ru/ 2>&1 | head -12
-            echo "=== HTTPS apex body ==="
-            curl -sSL --max-time 25 https://govorim-pravilno.ru/ 2>&1 | head -c 2600
+            echo "=== HTTP apex BODY ==="
+            curl -sS --max-time 25 http://govorim-pravilno.ru/ | head -c 2400
             echo
-            echo "=== assets referenced ==="
-            curl -sSL --max-time 25 https://govorim-pravilno.ru/ 2>&1 | grep -o 'assets/[^"]*' | head -5
-            echo "=== asset fetch code ==="
-            A=$(curl -sSL --max-time 25 https://govorim-pravilno.ru/ | grep -o '/assets/[^"]*\.js' | head -1)
+            echo "=== HTTP www ==="
+            curl -sS -o /dev/null -w 'code=%{http_code}\n' --max-time 25 http://www.govorim-pravilno.ru/
+            echo "=== HTTP apex /assets probe ==="
+            A=$(curl -sS --max-time 25 http://govorim-pravilno.ru/ | grep -o '/assets/[^"]*\.js' | head -1)
             echo "asset=$A"
-            curl -sS -o /dev/null -w 'code=%{http_code} size=%{size_download}\n' --max-time 25 "https://govorim-pravilno.ru$A" 
+            curl -sS -o /dev/null -w 'code=%{http_code} size=%{size_download}\n' --max-time 25 "http://govorim-pravilno.ru$A"
+            echo "=== CNAME file served ==="
+            curl -sS --max-time 25 http://govorim-pravilno.ru/CNAME
+            echo
           } > dns-result.txt 2>&1
           cat dns-result.txt
 
