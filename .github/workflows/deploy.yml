@@ -24,6 +24,15 @@ jobs:
           node-version: 20
       - run: npm install --no-audit --no-fund
       - run: npm run build
+      - name: Vorab-Rendering der Unterseiten (für Suchmaschinen)
+        run: |
+          cp public/sitemap.xml dist/sitemap.xml
+          mkdir -p /tmp/prerender && cd /tmp/prerender && npm init -y >/dev/null && npm install --no-audit --no-fund playwright@1.47.2
+          npx --prefix /tmp/prerender playwright install --with-deps chromium
+          cd "$GITHUB_WORKSPACE"
+          npx vite preview --port 4173 --strictPort &
+          sleep 5
+          NODE_PATH=/tmp/prerender/node_modules node scripts/prerender.mjs
       - name: 404-Seite für Routen als Kopie von index.html
         run: cp dist/index.html dist/404.html
       - uses: actions/configure-pages@v5

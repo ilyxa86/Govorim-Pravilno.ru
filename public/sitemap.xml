@@ -7,20 +7,8 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/services</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://govorim-pravilno.ru/about</loc>
     <lastmod>2026-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/reviews</loc>
-    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -31,166 +19,62 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://govorim-pravilno.ru/blog-index</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://govorim-pravilno.ru/contacts</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Services -->
   <url>
-    <loc>https://govorim-pravilno.ru/services/postanovka-i-korrektsiya-zvukoproiznosheniya</loc>
-    <lastmod>2026-08-13</lastmod>
+    <loc>https://govorim-pravilno.ru/materials</loc>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/services/razvitie-rechi</loc>
+    <loc>https://govorim-pravilno.ru/privacy</loc>
     <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/services/podgotovka-k-shkole</loc>
+    <loc>https://govorim-pravilno.ru/reviews</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/services</loc>
     <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/services/obuchenie-chteniyu</loc>
+    <loc>https://govorim-pravilno.ru/terms</loc>
     <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/services/logopedicheskiy-massazh</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/services/miofunktsionalnaya-korrektsiya-rechi</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/services/zaikanie-korrektsiya-rechi</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/services/igrovye-uprazhneniya-dlya-rechi</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- Blog Articles -->
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/speech-bite</loc>
-    <lastmod>2026-01-25</lastmod>
+    <loc>https://govorim-pravilno.ru/blog/adenoidy-i-rotovoe-dyhanie</loc>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/blog/frenulum-surgery</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://govorim-pravilno.ru/blog/avtomatizatsiya-zvuka</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/blog/teach-reading</loc>
-    <lastmod>2026-01-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/breathing-speech</loc>
-    <lastmod>2026-01-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/school-checklist</loc>
-    <lastmod>2026-01-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/myofunctional-tongue</loc>
-    <lastmod>2026-01-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/russian-for-expats</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/slurred-speech</loc>
-    <lastmod>2026-01-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/online-speech-therapist</loc>
-    <lastmod>2026-01-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/mezhzubnoe-proiznoshenie</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/gorlovoe-r</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/school-readiness</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/myofunctional-basics</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/speech-development-tips</loc>
-    <lastmod>2026-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/zaikanie-u-vzroslyh</loc>
-    <lastmod>2026-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/uzdechka-yazyka-5-priznakov</loc>
-    <lastmod>2026-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/svistyashchie-zvuki</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/parasigmatizm</loc>
-    <lastmod>2026-01-07</lastmod>
+    <loc>https://govorim-pravilno.ru/blog/bilingual-brain</loc>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -201,8 +85,224 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://govorim-pravilno.ru/blog/braces-myofunctional</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/breathing-speech</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/brekety-i-rech-lifehacks</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/chewing-correctly</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/child-not-speaking</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/fitnes-dlya-yazyka</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/frenulum-surgery</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/gorlovoe-r</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/hrap-i-razbitost</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/infantile-swallowing</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/infantilnyy-glotok</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/kogda-mioterapiya-ne-effektivna</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/logoped-ne-spravlyaetsya</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/mezhzubnoe-proiznoshenie</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/mouth-breathing</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/mouth-breathing-danger</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/myofunctional-basics</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/myofunctional-tongue</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/online-logopedia</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/online-logopedia-2</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/online-speech-therapist</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/otkrytyy-rot-oshibki-roditeley</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/parasigmatizm</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/play-activity</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/posture-mouth</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/r-sound-adults</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/rasshchelina-guby-i-neba</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://govorim-pravilno.ru/blog/reading-difficulties</loc>
     <lastmod>2026-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/rebenok-spit-s-otkrytym-rtom</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/russian-for-expats</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/school-checklist</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/school-readiness</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/slurred-speech</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/snoring-speech</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/soska-vred-posle-dvuh-let</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/speech-bite</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/speech-development-tips</loc>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -212,19 +312,101 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <!-- Legal -->
-  <!-- Materials -->
   <url>
-    <loc>https://govorim-pravilno.ru/materials</loc>
+    <loc>https://govorim-pravilno.ru/blog/speech-pyramid</loc>
     <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/stuttering-children</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/stuttering-overcoming</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/stuttering-psychology</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/svistyashchie-zvuki</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/swallowing-endings</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/teach-reading</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/uzdechka-yazyka-5-priznakov</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/vybor-logopeda-dlya-shkoly</loc>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/materials/avtomatizatsiya-zvuka-zh</loc>
+    <loc>https://govorim-pravilno.ru/blog/vybor-logopeda-online</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/yazyk-i-zuby-prikus</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/yazyk-mezhdu-zubami</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/blog/zaikanie-u-vzroslyh</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/games/lopni-puzyr</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/games/poimai-zvuk</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/materials/avtomatizatsiya-zvuka</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://govorim-pravilno.ru/materials/avtomatizatsiya-zvuka-l</loc>
@@ -256,206 +438,106 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <!-- Additional Blog Articles -->
   <url>
-    <loc>https://govorim-pravilno.ru/blog/online-logopedia</loc>
+    <loc>https://govorim-pravilno.ru/materials/avtomatizatsiya-zvuka-zh</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/blog/mouth-breathing</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://govorim-pravilno.ru/materials/interaktivnye-igry</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/blog/bilingual-brain</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://govorim-pravilno.ru/materials/video</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/blog/stuttering-children</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/stuttering-psychology</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/r-sound-adults</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/online-logopedia-2</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/posture-mouth</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/child-not-speaking</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/snoring-speech</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/mouth-breathing-danger</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/speech-pyramid</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/stuttering-overcoming</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/braces-myofunctional</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/chewing-correctly</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/infantile-swallowing</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/play-activity</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/swallowing-endings</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/logoped-ne-spravlyaetsya</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/soska-vred-posle-dvuh-let</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/brekety-i-rech-lifehacks</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/adenoidy-i-rotovoe-dyhanie</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/fitnes-dlya-yazyka</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/hrap-i-razbitost</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/yazyk-i-zuby-prikus</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/yazyk-mezhdu-zubami</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <!-- Legal -->
-  <url>
-    <loc>https://govorim-pravilno.ru/privacy</loc>
+    <loc>https://govorim-pravilno.ru/services/igrovye-uprazhneniya-dlya-rechi</loc>
     <lastmod>2026-08-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/terms</loc>
+    <loc>https://govorim-pravilno.ru/services/logopedicheskiy-massazh</loc>
     <lastmod>2026-08-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url><loc>https://govorim-pravilno.ru/blog/vybor-logopeda-online</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://govorim-pravilno.ru/blog/otkrytyy-rot-oshibki-roditeley</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url>
-    <loc>https://govorim-pravilno.ru/blog/vybor-logopeda-dlya-shkoly</loc>
-    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/blog/infantilnyy-glotok</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://govorim-pravilno.ru/services/miofunktsionalnaya-korrektsiya-rechi</loc>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/blog/kogda-mioterapiya-ne-effektivna</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://govorim-pravilno.ru/services/obuchenie-chteniyu</loc>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/blog/rasshchelina-guby-i-neba</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://govorim-pravilno.ru/services/podgotovka-k-shkole</loc>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://govorim-pravilno.ru/blog/rebenok-spit-s-otkrytym-rtom</loc>
-    <lastmod>2026-09-10</lastmod>
+    <loc>https://govorim-pravilno.ru/services/postanovka-i-korrektsiya-zvukoproiznosheniya</loc>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/services/razvitie-rechi</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/services/zaikanie-korrektsiya-rechi</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/materials/interaktivnye-igry/chto-spryatalos</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/materials/interaktivnye-igry/lishnyaya-kartinka</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/materials/interaktivnye-igry/naydi-paru</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/materials/interaktivnye-igry/naydi-zvuk</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/materials/interaktivnye-igry/pokormi-geroya</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://govorim-pravilno.ru/materials/interaktivnye-igry/soberi-slovo</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
