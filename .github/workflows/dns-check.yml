@@ -1,0 +1,35 @@
+name: DNS Check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dig
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq dnsutils
+
+      - name: Authoritative nameservers
+        run: dig +short NS govorim-pravilno.ru || true
+
+      - name: A records (public resolver 8.8.8.8)
+        run: dig @8.8.8.8 +noall +answer A govorim-pravilno.ru || true
+
+      - name: A records (authoritative ns1.reg.ru)
+        run: dig @ns1.reg.ru +noall +answer A govorim-pravilno.ru || true
+
+      - name: A records www
+        run: dig @8.8.8.8 +noall +answer A www.govorim-pravilno.ru || true
+
+      - name: AAAA records
+        run: dig @8.8.8.8 +noall +answer AAAA govorim-pravilno.ru || true
+
+      - name: CNAME at apex
+        run: dig @8.8.8.8 +noall +answer CNAME govorim-pravilno.ru || true
+
+      - name: HTTP response from domain
+        run: curl -sS -I --max-time 20 http://govorim-pravilno.ru/ || true
+
+      - name: HTTP response from pages URL
+        run: curl -sS -o /dev/null -w '%{http_code}\n' --max-time 20 https://ilyxa86.github.io/Govorim-Pravilno.ru/ || true
