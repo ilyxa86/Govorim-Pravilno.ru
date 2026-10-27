@@ -32,6 +32,12 @@ jobs:
             dig @8.8.8.8 +noall +answer A www.govorim-pravilno.ru
             echo "=== AAAA apex ==="
             dig @8.8.8.8 +noall +answer AAAA govorim-pravilno.ru
+            echo "=== CAA apex ==="
+            dig @8.8.8.8 +noall +answer CAA govorim-pravilno.ru
+            echo "=== CAA www ==="
+            dig @8.8.8.8 +noall +answer CAA www.govorim-pravilno.ru
+            echo "=== www record type (authoritative) ==="
+            dig @ns1.reg.ru +noall +answer ANY www.govorim-pravilno.ru
             echo "=== CNAME apex ==="
             dig @8.8.8.8 +noall +answer CNAME govorim-pravilno.ru
             echo "=== HTTP apex ==="
