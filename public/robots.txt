@@ -1,0 +1,26 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandexbot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
+
+# HTML-Linkindex aller Seiten
+# https://govorim-pravilno.ru/blog-index.html
+
+# Sitemap location
+Sitemap: https://govorim-pravilno.ru/sitemap.xml
+
+# Host directive for Yandex
+Host: https://govorim-pravilno.ru
