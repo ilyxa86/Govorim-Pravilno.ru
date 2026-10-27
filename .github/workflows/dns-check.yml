@@ -61,7 +61,7 @@ jobs:
             curl -sS -o /dev/null -w 'code=%{http_code} size=%{size_download}\n' --max-time 25 "http://govorim-pravilno.ru$A"
             echo "=== SUBPAGE TEST ==="
             for u in /services /blog/speech-development-tips /games/lopni-puzyr; do
-              echo "--- $u"; curl -sS --max-time 25 "http://govorim-pravilno.ru$u" | grep -o '<title>[^<]*' ; curl -sS --max-time 25 "http://govorim-pravilno.ru$u" | grep -o '<h1[^>]*>[^<]\{0,80\}' | head -1
+              echo "--- $u"; curl -sSL --max-time 25 "http://govorim-pravilno.ru$u" | grep -o '<title>[^<]*' ; curl -sSL --max-time 25 "http://govorim-pravilno.ru$u" | grep -o "<h1[^>]*>[^<]*"  | head -1
             done
             echo "=== HTTPS apex cert ==="
             curl -sS -o /dev/null -w 'code=%{http_code}\n' --max-time 25 https://govorim-pravilno.ru/ 2>&1 | head -3
