@@ -22,24 +22,30 @@ jobs:
         run: |
           set +e
           {
-            echo "=== NS (8.8.8.8) ==="
-            dig @8.8.8.8 +short NS govorim-pravilno.ru
-            echo "=== A apex (8.8.8.8) ==="
-            dig @8.8.8.8 +noall +answer A govorim-pravilno.ru
-            echo "=== A apex (ns1.reg.ru) ==="
+            echo "=== SOA ns1 ==="
+            dig @ns1.reg.ru +noall +answer SOA govorim-pravilno.ru
+            echo "=== SOA ns2 ==="
+            dig @ns2.reg.ru +noall +answer SOA govorim-pravilno.ru
+            echo "=== A apex ns1 ==="
             dig @ns1.reg.ru +noall +answer A govorim-pravilno.ru
-            echo "=== A www (8.8.8.8) ==="
-            dig @8.8.8.8 +noall +answer A www.govorim-pravilno.ru
-            echo "=== AAAA apex ==="
-            dig @8.8.8.8 +noall +answer AAAA govorim-pravilno.ru
-            echo "=== CAA apex ==="
-            dig @8.8.8.8 +noall +answer CAA govorim-pravilno.ru
-            echo "=== CAA www ==="
-            dig @8.8.8.8 +noall +answer CAA www.govorim-pravilno.ru
-            echo "=== www record type (authoritative) ==="
-            dig @ns1.reg.ru +noall +answer ANY www.govorim-pravilno.ru
-            echo "=== CNAME apex ==="
-            dig @8.8.8.8 +noall +answer CNAME govorim-pravilno.ru
+            echo "=== A apex ns2 ==="
+            dig @ns2.reg.ru +noall +answer A govorim-pravilno.ru
+            echo "=== www ns1 ==="
+            dig @ns1.reg.ru +noall +answer A www.govorim-pravilno.ru
+            echo "=== www ns2 ==="
+            dig @ns2.reg.ru +noall +answer A www.govorim-pravilno.ru
+            echo "=== NS at parent (.ru) ==="
+            dig @a.dns.ripn.net +noall +authority +additional NS govorim-pravilno.ru
+            echo "=== resolver 1.1.1.1 ==="
+            dig @1.1.1.1 +noall +answer A govorim-pravilno.ru
+            echo "=== resolver 9.9.9.9 ==="
+            dig @9.9.9.9 +noall +answer A govorim-pravilno.ru
+            echo "=== resolver 208.67.222.222 ==="
+            dig @208.67.222.222 +noall +answer A govorim-pravilno.ru
+            echo "=== DNSSEC/status ==="
+            dig @8.8.8.8 +dnssec +noall +comments A govorim-pravilno.ru | head -8
+            echo "=== AAAA www ==="
+            dig @8.8.8.8 +noall +answer AAAA www.govorim-pravilno.ru
             echo "=== HTTP apex ==="
             curl -sS -I --max-time 20 http://govorim-pravilno.ru/ 2>&1 | head -20
             echo "=== HTTPS pages url ==="
