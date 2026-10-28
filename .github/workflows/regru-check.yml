@@ -44,6 +44,9 @@ jobs:
           ls www/govorim-pravilno.ru
           SFTP
             echo "=== UPLOAD-TEST ==="
+            echo "pwlen=${#REGRU_PASSWORD} user=$REGRU_USER"
+            timeout 60 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -oPubkeyAuthentication=no -oPreferredAuthentications=password "$REGRU_USER@$H" <<< "pwd" 2>&1 | sed "s#$H#HOST#g" | tail -4
+            echo "--- ende login-test"
             sudo apt-get install -y -qq sshpass >/dev/null 2>&1
             bash scripts/upload-regru.sh 2>&1 | sed "s#$H#HOST#g"
             echo "exit=$?"
