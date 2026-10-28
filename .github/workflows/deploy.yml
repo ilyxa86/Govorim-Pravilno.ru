@@ -36,6 +36,8 @@ jobs:
       - name: 404-Seite für Routen als Kopie von index.html
         run: cp dist/index.html dist/404.html
       - name: Upload auf REG.RU-Hosting (SFTP)
+        continue-on-error: true
+        timeout-minutes: 15
         env:
           REGRU_HOST: ${{ secrets.REGRU_HOST }}
           REGRU_USER: ${{ secrets.REGRU_USER }}
@@ -47,9 +49,9 @@ jobs:
             exit 0
           fi
           sudo apt-get update -qq && sudo apt-get install -y -qq lftp
-          lftp -u "$REGRU_USER","$REGRU_PASSWORD" "sftp://$REGRU_HOST" -e "
+          timeout 840 lftp -u "$REGRU_USER","$REGRU_PASSWORD" "sftp://$REGRU_HOST" -e "
             set sftp:auto-confirm yes;
-            set net:max-retries 2;
+            set net:max-retries 2; set net:reconnect-interval-base 5; set sftp:connect-program \"ssh -a -x -o ConnectTimeout=20\";
             set net:timeout 30;
             mirror -R --delete --verbose=1 --exclude-glob CNAME dist/ ${REGRU_PATH:-www/govorim-pravilno.ru}/;
             bye"

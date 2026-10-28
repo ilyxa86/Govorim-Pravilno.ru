@@ -1,0 +1,53 @@
+name: REG.RU Check
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verbindung zum REG.RU-Hosting testen
+        env:
+          REGRU_HOST: ${{ secrets.REGRU_HOST }}
+          REGRU_USER: ${{ secrets.REGRU_USER }}
+          REGRU_PASSWORD: ${{ secrets.REGRU_PASSWORD }}
+        run: |
+          set +e
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp sshpass netcat-openbsd >/dev/null
+          {
+            echo "=== Runner-IP-Land ==="
+            curl -s --max-time 10 https://ipinfo.io/country
+            echo "=== Host-Format ==="
+            echo "laenge=${#REGRU_HOST} hat_protokoll=$(echo "$REGRU_HOST" | grep -c '://') hat_leerzeichen=$(echo "$REGRU_HOST" | grep -c ' ')"
+            echo "user_laenge=${#REGRU_USER} user_beginnt_mit_u=$(echo "$REGRU_USER" | grep -c '^u[0-9]')"
+            echo "passwort_gesetzt=$([ -n "$REGRU_PASSWORD" ] && echo ja || echo nein)"
+            echo "=== Port 22 (SFTP) ==="
+            timeout 25 nc -vz -w 15 "$REGRU_HOST" 22 2>&1 | sed "s/$REGRU_HOST/HOST/g"
+            echo "=== Port 21 (FTP) ==="
+            timeout 25 nc -vz -w 15 "$REGRU_HOST" 21 2>&1 | sed "s/$REGRU_HOST/HOST/g"
+            echo "=== Port 80 (HTTP) ==="
+            timeout 25 nc -vz -w 15 "$REGRU_HOST" 80 2>&1 | sed "s/$REGRU_HOST/HOST/g"
+            echo "=== SSH-Banner ==="
+            timeout 20 bash -c "exec 3<>/dev/tcp/$REGRU_HOST/22 && head -c 80 <&3" 2>&1 | sed "s/$REGRU_HOST/HOST/g"
+            echo
+            echo "=== SFTP-Login + Verzeichnis ==="
+            timeout 90 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -oBatchMode=no "$REGRU_USER@$REGRU_HOST" <<'SFTP' 2>&1 | sed "s/$REGRU_HOST/HOST/g" | head -60
+          pwd
+          ls -la
+          ls -la www
+          SFTP
+            echo "exit=$?"
+          } > regru-result.txt 2>&1
+          cat regru-result.txt
+      - name: Ergebnis veroeffentlichen
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git checkout -B regru-result
+          git add -f regru-result.txt
+          git commit -m "REG.RU check $(date -u +%FT%TZ)"
+          git push -f origin regru-result
