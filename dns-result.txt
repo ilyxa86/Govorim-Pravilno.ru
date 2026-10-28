@@ -1,0 +1,153 @@
+=== SOA ns1 ===
+govorim-pravilno.ru.	86400	IN	SOA	ns1.reg.ru. hostmaster.ns1.reg.ru. 1793207594 14400 3600 604800 10800
+=== SOA ns2 ===
+govorim-pravilno.ru.	86400	IN	SOA	ns1.reg.ru. hostmaster.ns1.reg.ru. 1793207594 14400 3600 604800 10800
+=== A apex ns1 ===
+govorim-pravilno.ru.	86400	IN	A	37.140.192.64
+=== A apex ns2 ===
+govorim-pravilno.ru.	86400	IN	A	37.140.192.64
+=== www ns1 ===
+www.govorim-pravilno.ru. 86400	IN	CNAME	govorim-pravilno.ru.
+govorim-pravilno.ru.	86400	IN	A	37.140.192.64
+=== www ns2 ===
+www.govorim-pravilno.ru. 86400	IN	CNAME	govorim-pravilno.ru.
+govorim-pravilno.ru.	86400	IN	A	37.140.192.64
+=== NS at parent (.ru) ===
+GOVORIM-PRAVILNO.ru.	345600	IN	NS	ns1.reg.ru.
+GOVORIM-PRAVILNO.ru.	345600	IN	NS	ns2.reg.ru.
+ns2.reg.RU.		345600	IN	A	176.99.13.12
+ns2.reg.RU.		345600	IN	A	176.99.13.14
+ns2.reg.RU.		345600	IN	A	176.99.13.16
+ns2.reg.RU.		345600	IN	A	176.99.13.18
+ns2.reg.RU.		345600	IN	A	194.58.117.12
+ns2.reg.RU.		345600	IN	A	194.58.117.14
+ns2.reg.RU.		345600	IN	A	194.58.117.16
+ns2.reg.RU.		345600	IN	A	194.58.117.18
+ns1.reg.RU.		345600	IN	A	176.99.13.11
+ns1.reg.RU.		345600	IN	A	176.99.13.13
+ns1.reg.RU.		345600	IN	A	176.99.13.15
+ns1.reg.RU.		345600	IN	A	176.99.13.17
+ns1.reg.RU.		345600	IN	A	194.58.117.11
+ns1.reg.RU.		345600	IN	A	194.58.117.13
+ns1.reg.RU.		345600	IN	A	194.58.117.15
+ns1.reg.RU.		345600	IN	A	194.58.117.17
+ns2.reg.ru.		345600	IN	AAAA	2a00:f940:9::1:2
+ns2.reg.ru.		345600	IN	AAAA	2a00:f940:9::2:2
+ns1.reg.ru.		345600	IN	AAAA	2a00:f940:9::1:1
+ns1.reg.ru.		345600	IN	AAAA	2a00:f940:9::2:1
+=== resolver 1.1.1.1 ===
+govorim-pravilno.ru.	86400	IN	A	37.140.192.64
+=== resolver 9.9.9.9 ===
+govorim-pravilno.ru.	41473	IN	A	185.199.111.153
+govorim-pravilno.ru.	41473	IN	A	185.199.108.153
+govorim-pravilno.ru.	41473	IN	A	185.199.110.153
+govorim-pravilno.ru.	41473	IN	A	185.199.109.153
+=== resolver 208.67.222.222 ===
+govorim-pravilno.ru.	86400	IN	A	37.140.192.64
+=== DNSSEC/status ===
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 37869
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 512
+=== AAAA www ===
+www.govorim-pravilno.ru. 21600	IN	CNAME	govorim-pravilno.ru.
+=== HTTP apex ===
+HTTP/1.1 301 Moved Permanently
+Server: nginx
+Date: Wed, 28 Oct 2026 17:32:47 GMT
+Content-Type: text/html
+Content-Length: 162
+Connection: keep-alive
+Location: https://govorim-pravilno.ru:443/
+
+=== HTTPS pages url ===
+code=301
+=== HTTP apex BODY ===
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+=== HTTP www ===
+code=301
+=== HTTP apex /assets probe ===
+asset=
+code=301 size=162
+=== SUBPAGE TEST ===
+--- /services
+<title>Услуги логопеда в Москве и онлайн | Светлана Коновалова
+<h1 class="text-3xl md:text-4xl font-bold text-center mb-4">Чем я 
+--- /blog/speech-development-tips
+<title>5 советов для развития речи у детей | Светлана Коновалова
+<h1 class="text-4xl md:text-5xl font-bold mb-6">5 советов для развития речи у детей
+--- /games/lopni-puzyr
+<title>Лопни пузырь | Интерактивные игры
+<h1 id="bubble-title" class="text-2xl font-bold md:text-4xl">Лопни пузырь
+=== HTTPS apex cert ===
+code=200
+=== CERT served apex (SNI) ===
+subject=CN = govorim-pravilno.ru
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Oct 28 16:23:21 2026 GMT
+notAfter=Jan 26 16:23:20 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:govorim-pravilno.ru, DNS:www.govorim-pravilno.ru
+=== CERT served www ===
+subject=CN = govorim-pravilno.ru
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Oct 28 16:23:21 2026 GMT
+notAfter=Jan 26 16:23:20 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:govorim-pravilno.ru, DNS:www.govorim-pravilno.ru
+=== CERT direct hosting IP ===
+subject=CN = govorim-pravilno.ru
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Oct 28 16:23:21 2026 GMT
+notAfter=Jan 26 16:23:20 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:govorim-pravilno.ru, DNS:www.govorim-pravilno.ru
+=== HTTPS apex verify ===
+code=200 ip=37.140.192.64
+=== HTTPS www verify ===
+code=200 ip=37.140.192.64
+=== HTTPS title ===
+<title>Логопед Светлана Коновалова — Москва и онлайн
+=== PAGES API ===
+{
+  "url": "https://api.github.com/repos/ilyxa86/Govorim-Pravilno.ru/pages",
+  "status": null,
+  "cname": "govorim-pravilno.ru",
+  "custom_404": false,
+  "html_url": "http://govorim-pravilno.ru/",
+  "build_type": "workflow",
+  "source": {
+    "branch": "main",
+    "path": "/"
+  },
+  "public": true,
+  "protected_domain_state": null,
+  "pending_domain_unverified_at": null,
+  "https_certificate": {
+    "state": "new",
+    "description": "This domain was recently added. The certificate request process will begin shortly.",
+    "domains": [
+      "govorim-pravilno.ru"
+    ]
+  },
+  "https_enforced": false
+}
+
+=== CNAME file served ===
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
