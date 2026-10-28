@@ -41,8 +41,17 @@ jobs:
           pwd
           ls -la
           ls -la www
+          ls www/govorim-pravilno.ru
           SFTP
             echo "exit=$?"
+            echo "=== Seite ueber den Hosting-Server (HTTP) ==="
+            for u in / /services /blog/speech-development-tips /games/lopni-puzyr /sitemap.xml /gibt-es-nicht; do
+              code=$(curl -s -o /tmp/p.html -w '%{http_code}' --max-time 20 -L -H "Host: govorim-pravilno.ru" "http://$H$u")
+              echo "$u -> $code $(grep -o '<title>[^<]*' /tmp/p.html | head -1)"
+            done
+            echo "=== Asset ==="
+            A=$(curl -s --max-time 20 -H "Host: govorim-pravilno.ru" "http://$H/" | grep -o '/assets/[^"]*\.js' | head -1)
+            curl -s -o /dev/null -w "$A -> %{http_code} %{size_download} bytes\n" --max-time 30 -H "Host: govorim-pravilno.ru" "http://$H$A"
           } > regru-result.txt 2>&1
           cat regru-result.txt
       - name: Ergebnis veroeffentlichen
