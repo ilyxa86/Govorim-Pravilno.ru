@@ -49,20 +49,7 @@ jobs:
             exit 0
           fi
           sudo apt-get update -qq && sudo apt-get install -y -qq sshpass >/dev/null
-          H="${REGRU_HOST#*://}"; H="${H%%/*}"; H="${H%%:*}"; H="$(echo "$H" | tr -d "[:space:]")"
-          ZIEL="${REGRU_PATH:-www/govorim-pravilno.ru}"
-          B=sftp-batch.txt
-          : > "$B"
-          echo "cd $ZIEL" >> "$B"
-          (cd dist && find . -mindepth 1 -type d | sed 's#^\./##' | sort) | while read -r d; do echo "-mkdir \"$d\"" >> "$B"; done
-          (cd dist && find . -type f | sed 's#^\./##') | while read -r f; do echo "put \"dist/$f\" \"$f\"" >> "$B"; done
-          echo "bye" >> "$B"
-          echo "Befehle im Upload: $(wc -l < "$B")"
-          timeout 840 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -b "$B" "$REGRU_USER@$H" > sftp-upload.log 2>&1
-          rc=$?
-          echo "sftp exit code: $rc"
-          tail -5 sftp-upload.log | sed "s#$H#HOST#g"
-          exit $rc
+          bash scripts/upload-regru.sh
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
