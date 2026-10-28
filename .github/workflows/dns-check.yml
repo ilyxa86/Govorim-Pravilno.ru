@@ -65,6 +65,18 @@ jobs:
             done
             echo "=== HTTPS apex cert ==="
             curl -sS -o /dev/null -w 'code=%{http_code}\n' --max-time 25 https://govorim-pravilno.ru/ 2>&1 | head -3
+            echo "=== CERT served apex (SNI) ==="
+            timeout 20 openssl s_client -connect govorim-pravilno.ru:443 -servername govorim-pravilno.ru </dev/null 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName
+            echo "=== CERT served www ==="
+            timeout 20 openssl s_client -connect www.govorim-pravilno.ru:443 -servername www.govorim-pravilno.ru </dev/null 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName
+            echo "=== CERT direct hosting IP ==="
+            timeout 20 openssl s_client -connect 37.140.192.64:443 -servername govorim-pravilno.ru </dev/null 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName
+            echo "=== HTTPS apex verify ==="
+            curl -sS -o /dev/null -w 'code=%{http_code} ip=%{remote_ip}\n' --max-time 25 https://govorim-pravilno.ru/ 2>&1
+            echo "=== HTTPS www verify ==="
+            curl -sS -o /dev/null -w 'code=%{http_code} ip=%{remote_ip}\n' --max-time 25 https://www.govorim-pravilno.ru/ 2>&1
+            echo "=== HTTPS title ==="
+            curl -sS --max-time 25 https://govorim-pravilno.ru/ | grep -o '<title>[^<]*'
             echo "=== PAGES API ==="
             curl -sS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
               https://api.github.com/repos/${{ github.repository }}/pages
