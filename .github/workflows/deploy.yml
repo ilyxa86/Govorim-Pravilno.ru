@@ -51,7 +51,6 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq sshpass >/dev/null
           H="${REGRU_HOST#*://}"; H="${H%%/*}"; H="${H%%:*}"; H="$(echo "$H" | tr -d "[:space:]")"
           ZIEL="${REGRU_PATH:-www/govorim-pravilno.ru}"
-          rm -f dist/CNAME
           {
             echo "cd $ZIEL"
             echo "lcd dist"
@@ -59,6 +58,7 @@ jobs:
             echo "put .htaccess"
             echo "bye"
           } > sftp-batch.txt
+          set +e
           timeout 840 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -b sftp-batch.txt "$REGRU_USER@$H" > sftp-upload.log 2>&1
           rc=$?
           echo "sftp exit code: $rc"; tail -5 sftp-upload.log | sed "s#$H#HOST#g"
