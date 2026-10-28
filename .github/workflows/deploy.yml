@@ -35,6 +35,24 @@ jobs:
           node scripts/prerender.mjs
       - name: 404-Seite für Routen als Kopie von index.html
         run: cp dist/index.html dist/404.html
+      - name: Upload auf REG.RU-Hosting (SFTP)
+        env:
+          REGRU_HOST: ${{ secrets.REGRU_HOST }}
+          REGRU_USER: ${{ secrets.REGRU_USER }}
+          REGRU_PASSWORD: ${{ secrets.REGRU_PASSWORD }}
+          REGRU_PATH: ${{ secrets.REGRU_PATH }}
+        run: |
+          if [ -z "$REGRU_HOST" ] || [ -z "$REGRU_PASSWORD" ]; then
+            echo "REG.RU-Zugangsdaten noch nicht hinterlegt - Upload uebersprungen."
+            exit 0
+          fi
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          lftp -u "$REGRU_USER","$REGRU_PASSWORD" "sftp://$REGRU_HOST" -e "
+            set sftp:auto-confirm yes;
+            set net:max-retries 2;
+            set net:timeout 30;
+            mirror -R --delete --verbose=1 --exclude-glob CNAME dist/ ${REGRU_PATH:-www/govorim-pravilno.ru}/;
+            bye"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

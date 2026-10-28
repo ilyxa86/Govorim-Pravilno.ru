@@ -1,0 +1,20 @@
+# Apache-Konfiguration für das REG.RU-Hosting
+Options -Indexes
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# Unbekannte Adressen an die Anwendung weiterreichen (Seiten ohne Vorab-Rendering)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [L]
+
+# Zwischenspeicher: Programmdateien lange, HTML kurz
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2?|png|jpe?g|webp|svg|ico|mp3)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
