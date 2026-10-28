@@ -11,7 +11,7 @@ echo "cd $ZIEL" >> "$B"
 echo "bye" >> "$B"
 echo "Befehle im Upload: $(wc -l < "$B")"
 echo "--- erste Befehle:"; head -5 "$B"
-timeout 840 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -b "$B" "$REGRU_USER@$H" > "${LOG_FILE:-sftp-upload.log}" 2>&1
+timeout 840 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -oBatchMode=no -b "$B" "$REGRU_USER@$H" > "${LOG_FILE:-sftp-upload.log}" 2>&1
 rc=$?
 echo "sftp exit code: $rc"
 sed "s#$H#HOST#g" "${LOG_FILE:-sftp-upload.log}" | tail -30
