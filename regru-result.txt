@@ -1,0 +1,18 @@
+=== ROOT ===
+<title>Логопед Светлана Коновалова — Москва и онлайн
+/services -> 200 <title>Услуги логопеда в Москве и онлайн | Светлана Коновалова
+/services/miofunktsionalnaya-korrektsiya-rechi -> 200 <title>Миофункциональная коррекция речи — логопед Светлана Коновалова
+/blog/speech-development-tips -> 200 <title>5 советов для развития речи у детей | Светлана Коновалова
+/games/lopni-puzyr -> 200 <title>Лопни пузырь | Интерактивные игры
+/materials -> 200 <title>Занятия и материалы | Логопед Светлана Коновалова
+/sitemap.xml -> 200 
+/robots.txt -> 200 
+/gibt-es-nicht -> 200 <title>Логопед Светлана Коновалова — Москва и онлайн
+=== JS-ASSET ===
+asset=/assets/index-DbxvVuTV.js 200 384697
+=== HTTP-Header Startseite ===
+HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 28 Oct 2026 17:05:40 GMT
+Content-Type: text/html
+Content-Length: 2251
