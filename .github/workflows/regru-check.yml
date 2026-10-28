@@ -21,17 +21,16 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq sshpass >/dev/null 2>&1
           H="${REGRU_HOST#*://}"; H="${H%%/*}"; H="${H%%:*}"; H="$(echo "$H" | tr -d '[:space:]')"
           {
-            echo "=== LISTING ==="
-            printf 'cd www/govorim-pravilno.ru\nls -la\nls -la assets\nget .htaccess diag-htaccess.txt\nbye\n' > diag.txt
-            timeout 90 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -oBatchMode=no -b diag.txt "$REGRU_USER@$H" 2>&1 | sed "s#$H#HOST#g" | grep -av "^sftp>"
-            echo "=== HTACCESS ==="
-            cat diag-htaccess.txt 2>/dev/null | head -12
-            echo "=== ROOT (Host-Header) ==="
-            curl -s --max-time 20 -H "Host: govorim-pravilno.ru" "http://$H/" | head -c 400; echo
-            echo "=== SITEMAP ==="
-            curl -s -o /dev/null -w '%{http_code}\n' --max-time 20 -H "Host: govorim-pravilno.ru" "http://$H/sitemap.xml"
-            echo "=== SERVICES ==="
-            curl -s --max-time 20 -H "Host: govorim-pravilno.ru" "http://$H/services" | grep -o '<title>[^<]*' | head -1
+            echo "=== ROOT ==="
+            curl -s --max-time 20 -H "Host: govorim-pravilno.ru" "http://$H/" | grep -o '<title>[^<]*' | head -1
+            for u in /services /services/miofunktsionalnaya-korrektsiya-rechi /blog/speech-development-tips /games/lopni-puzyr /materials /sitemap.xml /robots.txt /gibt-es-nicht; do
+              echo "$u -> $(curl -s -o /tmp/x -w '%{http_code}' --max-time 20 -L -H "Host: govorim-pravilno.ru" "http://$H$u") $(grep -o '<title>[^<]*' /tmp/x | head -1)"
+            done
+            echo "=== JS-ASSET ==="
+            A=$(curl -s --max-time 20 -H "Host: govorim-pravilno.ru" "http://$H/" | grep -o '/assets/index[^"]*\.js' | head -1)
+            echo "asset=$A $(curl -s -o /dev/null -w '%{http_code} %{size_download}' --max-time 30 -H "Host: govorim-pravilno.ru" "http://$H$A")"
+            echo "=== HTTP-Header Startseite ==="
+            curl -s -I --max-time 20 -H "Host: govorim-pravilno.ru" "http://$H/" | head -5
           } > regru-result.txt 2>&1
           cat regru-result.txt
       - name: Ergebnis veroeffentlichen
