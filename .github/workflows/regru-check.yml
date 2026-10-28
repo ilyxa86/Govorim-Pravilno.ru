@@ -19,24 +19,25 @@ jobs:
         run: |
           set +e
           sudo apt-get update -qq && sudo apt-get install -y -qq lftp sshpass netcat-openbsd >/dev/null
+          H="${REGRU_HOST#*://}"; H="${H%%/*}"; H="${H%%:*}"; H="$(echo "$H" | tr -d "[:space:]")"
           {
             echo "=== Runner-IP-Land ==="
             curl -s --max-time 10 https://ipinfo.io/country
             echo "=== Host-Format ==="
-            echo "laenge=${#REGRU_HOST} hat_protokoll=$(echo "$REGRU_HOST" | grep -c '://') hat_leerzeichen=$(echo "$REGRU_HOST" | grep -c ' ')"
+            echo "bereinigt: laenge=${#H} hat_protokoll=$(echo "$H" | grep -c "://") endung=${H##*.}"; echo "roh: laenge=${#REGRU_HOST} hat_protokoll=$(echo "$REGRU_HOST" | grep -c '://') hat_leerzeichen=$(echo "$REGRU_HOST" | grep -c ' ')"
             echo "user_laenge=${#REGRU_USER} user_beginnt_mit_u=$(echo "$REGRU_USER" | grep -c '^u[0-9]')"
             echo "passwort_gesetzt=$([ -n "$REGRU_PASSWORD" ] && echo ja || echo nein)"
             echo "=== Port 22 (SFTP) ==="
-            timeout 25 nc -vz -w 15 "$REGRU_HOST" 22 2>&1 | sed "s/$REGRU_HOST/HOST/g"
+            timeout 25 nc -vz -w 15 "$H" 22 2>&1 | sed "s#$H#HOST#g"
             echo "=== Port 21 (FTP) ==="
-            timeout 25 nc -vz -w 15 "$REGRU_HOST" 21 2>&1 | sed "s/$REGRU_HOST/HOST/g"
+            timeout 25 nc -vz -w 15 "$H" 21 2>&1 | sed "s#$H#HOST#g"
             echo "=== Port 80 (HTTP) ==="
-            timeout 25 nc -vz -w 15 "$REGRU_HOST" 80 2>&1 | sed "s/$REGRU_HOST/HOST/g"
+            timeout 25 nc -vz -w 15 "$H" 80 2>&1 | sed "s#$H#HOST#g"
             echo "=== SSH-Banner ==="
-            timeout 20 bash -c "exec 3<>/dev/tcp/$REGRU_HOST/22 && head -c 80 <&3" 2>&1 | sed "s/$REGRU_HOST/HOST/g"
+            timeout 20 bash -c "exec 3<>/dev/tcp/$H/22 && head -c 80 <&3" 2>&1 | sed "s#$H#HOST#g"
             echo
             echo "=== SFTP-Login + Verzeichnis ==="
-            timeout 90 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -oBatchMode=no "$REGRU_USER@$REGRU_HOST" <<'SFTP' 2>&1 | sed "s/$REGRU_HOST/HOST/g" | head -60
+            timeout 90 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -oBatchMode=no "$REGRU_USER@$H" <<'SFTP' 2>&1 | sed "s#$H#HOST#g" | head -60
           pwd
           ls -la
           ls -la www
