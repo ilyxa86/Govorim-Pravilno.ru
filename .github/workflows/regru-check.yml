@@ -43,27 +43,11 @@ jobs:
           ls -la www
           ls www/govorim-pravilno.ru
           SFTP
-            echo "=== UPLOAD-TEST ==="
-            echo "pwlen=${#REGRU_PASSWORD} user=$REGRU_USER"
-            timeout 60 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -oPubkeyAuthentication=no -oPreferredAuthentications=password "$REGRU_USER@$H" <<< "pwd" 2>&1 | sed "s#$H#HOST#g" | tail -4
-            echo "--- ende login-test"
-            sudo apt-get install -y -qq sshpass >/dev/null 2>&1
-            bash scripts/upload-regru.sh 2>&1 | sed "s#$H#HOST#g"
-            echo "exit=$?"
-            echo "=== Seite ueber den Hosting-Server (HTTP) ==="
-            for u in / /services /blog/speech-development-tips /games/lopni-puzyr /sitemap.xml /gibt-es-nicht; do
-              code=$(curl -s -o /tmp/p.html -w '%{http_code}' --max-time 20 -L -H "Host: govorim-pravilno.ru" "http://$H$u")
-              echo "$u -> $code $(grep -o '<title>[^<]*' /tmp/p.html | head -1)"
-            done
-            echo "=== Asset ==="
-            A=$(curl -s --max-time 20 -H "Host: govorim-pravilno.ru" "http://$H/" | grep -o '/assets/[^"]*\.js' | head -1)
-            curl -s -o /dev/null -w "$A -> %{http_code} %{size_download} bytes\n" --max-time 30 -H "Host: govorim-pravilno.ru" "http://$H$A"
-          } > regru-result.txt 2>&1
-          cat regru-result.txt
-      - name: Ergebnis veroeffentlichen
-        run: |
-          git config user.name "github-actions"; git config user.email "actions@github.com"
-          git checkout -B regru-result
-          git add -f regru-result.txt
-          git commit -m "REG.RU check $(date -u +%FT%TZ)"
-          git push -f origin regru-result
+            echo "=== DIAG-LISTING ==="
+            printf 'ls -l www/govorim-pravilno.ru/index.html\nls -l www/govorim-pravilno.ru/sitemap.xml\nls -1 www/govorim-pravilno.ru | wc -l\nls -1 www/govorim-pravilno.ru/assets | wc -l\nbye\n' > diag.txt
+            timeout 90 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -b diag.txt "$REGRU_USER@$H" 2>&1 | sed "s#$H#HOST#g" | grep -av "^sftp>" | head -20
+            echo "=== DIAG-ROOT ==="
+            curl -s --max-time 20 -H "Host: govorim-pravilno.ru" "http://$H/" | head -c 400; echo
+            echo "=== DIAG-SITEMAP ==="
+            curl -s -o /dev/null -w '%{http_code}\n' --max-time 20 -H "Host: govorim-pravilno.ru" "http://$H/sitemap.xml"
+            echo "=== DIAG-END ==="
