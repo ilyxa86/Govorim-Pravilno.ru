@@ -37,7 +37,7 @@ jobs:
         run: cp dist/index.html dist/404.html
       - name: Upload auf REG.RU-Hosting (SFTP)
         continue-on-error: true
-        timeout-minutes: 15
+        timeout-minutes: 50
         env:
           REGRU_HOST: ${{ secrets.REGRU_HOST }}
           REGRU_USER: ${{ secrets.REGRU_USER }}

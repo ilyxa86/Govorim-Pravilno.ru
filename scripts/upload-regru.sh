@@ -7,11 +7,12 @@ B="${BATCH_FILE:-sftp-batch.txt}"
 : > "$B"
 echo "cd $ZIEL" >> "$B"
 (cd dist && find . -mindepth 1 -type d | sed 's#^\./##' | sort) | while IFS= read -r d; do echo "-mkdir \"$d\"" >> "$B"; done
-(cd dist && find . -type f | sed 's#^\./##') | while IFS= read -r f; do echo "put \"dist/$f\" \"$f\"" >> "$B"; done
+for f in index.html .htaccess sitemap.xml robots.txt; do [ -f "dist/$f" ] && echo "put \"dist/$f\" \"$f\"" >> "$B"; done
+(cd dist && find . -type f | sed 's#^\./##' | grep -v -x -e index.html -e .htaccess -e sitemap.xml -e robots.txt) | while IFS= read -r f; do echo "put \"dist/$f\" \"$f\"" >> "$B"; done
 echo "bye" >> "$B"
 echo "Befehle im Upload: $(wc -l < "$B")"
 echo "--- erste Befehle:"; head -5 "$B"
-timeout 840 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -oBatchMode=no -b "$B" "$REGRU_USER@$H" > "${LOG_FILE:-sftp-upload.log}" 2>&1
+timeout 2700 sshpass -p "$REGRU_PASSWORD" sftp -oStrictHostKeyChecking=no -oConnectTimeout=20 -oBatchMode=no -b "$B" "$REGRU_USER@$H" > "${LOG_FILE:-sftp-upload.log}" 2>&1
 rc=$?
 echo "sftp exit code: $rc"
 sed "s#$H#HOST#g" "${LOG_FILE:-sftp-upload.log}" | tail -30
